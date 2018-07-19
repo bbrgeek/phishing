@@ -1,0 +1,62 @@
+{% extends 'PichetCoreBundle::layout.html.twig' %}
+{#{% extends '::base.html.twig' %}#}
+
+{% block content %}
+<div class="well">
+    <div class="col-md-12 step">
+        <div class="titre">Grande enquête interne sur la mobilité</div>
+    </div>
+    <div class="desc">Informations personnelles.</div>
+
+    {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+    {{ form_errors(form) }}
+    {{ form_start(form, {'attr': {'id': 'step1'}}) }}
+
+    <div class="form-group">
+        {{ form_label(form.nom,"Nom", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+        <div class="col-sm-10">
+            {{ form_widget(form.nom, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.prenom,"Prénom", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+        <div class="col-sm-10">
+            {{ form_widget(form.prenom, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.email,"Email", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+        <div class="col-sm-10">
+            {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+    {{ form_row(form.date) }}
+
+    <div class="form-group">
+        {{ form_label(form.ville,"Ville de naissance", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+        <div class="col-sm-10">
+            {{ form_widget(form.ville, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.transport,"Je me rend au travail en", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
+        <div class="col-sm-10">
+            {{ form_widget(form.transport, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+    <div class="col-md-12 center margintop20">
+        {{ form_widget(form.save) }}
+    </div>
+
+    {{ form_rest(form) }}
+
+    {{ form_end(form) }}
+
+</div>
+{% endblock %}

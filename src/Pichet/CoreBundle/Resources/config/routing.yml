@@ -1,0 +1,10 @@
+pichet_core_homepage:
+    path:     /{step}
+    defaults: { _controller: PichetCoreBundle:User:form }
+
+pichet_core_admin_homepage:
+    path:     /accueilAdmin
+    defaults: { _controller: PichetCoreBundle:Admin:home }
+
+
+

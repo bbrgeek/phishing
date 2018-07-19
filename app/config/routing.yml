@@ -1,0 +1,3 @@
+pichet_core:
+    resource: "@PichetCoreBundle/Resources/config/routing.yml"
+    prefix:   /
