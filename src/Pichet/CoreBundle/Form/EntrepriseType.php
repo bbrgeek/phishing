@@ -59,7 +59,7 @@ class EntrepriseType extends AbstractType
                 SubmitType::class,
                 array(
                     'label' => 'Finir l\'enquête et télécharger mes places',
-                    'attr' => array('class' => 'btn large btn-primary')
+                    'attr' => array('class' => 'col-xs-8 col-md-12 btn large btn-primary')
                 )
             );
         ;

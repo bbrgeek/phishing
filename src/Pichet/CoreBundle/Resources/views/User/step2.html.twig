@@ -2,50 +2,56 @@
 {#{% extends '::base.html.twig' %}#}
 
 {% block content %}
-<div class="well">
-    <div class="col-md-12  btn-primary">
-        <div class="titre">Grande enquête interne sur la mobilité</div>
-    </div>
-    <div class="desc">Votre Service</div>
-
-    {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
-
-    {{ form_errors(form) }}
-    {{ form_start(form, {'attr': {'id': 'step2'}}) }}
-
-    <div class="form-group">
-        {{ form_label(form.service,"Nom du service", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
-        <div class="col-sm-10">
-            {{ form_widget(form.service, {'attr': {'class': 'form-control'}}) }}
+<div class="container">
+    <div class="well">
+        <div class="raw">
+            <div class="col-xs-12 .col-md-4  btn btn-primary">
+                <div class="titre">Grande enquête interne sur la mobilité</div>
+            </div>
         </div>
-    </div>
-
-    <div class="form-group">
-        {{ form_label(form.manager,"Nom de votre manager", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
-        <div class="col-sm-10">
-            {{ form_widget(form.manager, {'attr': {'class': 'form-control'}}) }}
+        <div class="col-xs-12 .col-md-8">
+            <h4>Votre Service</h4>
         </div>
-    </div>
 
-    <div class="form-group">
-        {{ form_label(form.deplacement,"Nombres de déplacements par mois", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
-        <div class="col-sm-10">
-            {{ form_widget(form.deplacement, {'attr': {'class': 'form-control'}}) }}
+        {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+
+        {{ form_errors(form) }}
+        {#{{ form_start(form, {'attr': {'id': 'step2'}}) }}#}
+
+        <div class="form-group">
+            {{ form_label(form.service,"Nom du service", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+            <div class="col-sm-6">
+                {{ form_widget(form.service, {'attr': {'class': 'form-control'}}) }}
+            </div>
         </div>
-    </div>
 
-    <div class="form-group">
-        {{ form_label(form.telephone,"Indiquez votre numero de téléphone", {'label_attr': {'class': 'col-sm-2 control-label'}}) }}
-        <div class="col-sm-10">
-            {{ form_widget(form.telephone, {'attr': {'class': 'form-control'}}) }}
+        <div class="form-group">
+            {{ form_label(form.manager,"Nom de votre manager", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+            <div class="col-sm-6">
+                {{ form_widget(form.manager, {'attr': {'class': 'form-control'}}) }}
+            </div>
         </div>
-    </div>
 
-    <div class="col-md-12 center margintop20">
-        {{ form_widget(form.save) }}
-    </div>
-    {{ form_rest(form) }}
+        <div class="form-group">
+            {{ form_label(form.deplacement,"Nombres de déplacements par mois", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+            <div class="col-sm-6">
+                {{ form_widget(form.deplacement) }}
+            </div>
+        </div>
 
-    {{ form_end(form) }}
+        <div class="form-group">
+            {{ form_label(form.telephone,"Indiquez votre numero de téléphone", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+            <div class="col-sm-6">
+                {{ form_widget(form.telephone, {'attr': {'class': 'form-control'}}) }}
+            </div>
+        </div>
+
+        <div>
+            {{ form_widget(form.save) }}
+        </div>
+        {{ form_rest(form) }}
+
+        {{ form_end(form) }}
+    </div>
 </div>
 {% endblock %}
