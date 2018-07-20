@@ -66,6 +66,9 @@
     {{ form_rest(form) }}
 
     {{ form_end(form) }}
-
+    <a class="btn btn-primary add-participe" href="http://localhost:8000/step/1"
+       data-participe-url="{{ path('pichet_core_admin_ajax_add_participe') }}">
+        Participer
+    </a>
 </div>
 {% endblock %}

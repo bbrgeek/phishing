@@ -11,10 +11,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 class UserController extends Controller
 {
-    public function indexAction()
-    {
-        return $this->render('PichetCoreBundle:User:index.html.twig');
-    }
 
     public function formAction(Request $request, $step)
     {

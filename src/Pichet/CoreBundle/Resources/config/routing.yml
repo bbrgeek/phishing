@@ -1,10 +1,13 @@
-pichet_core_homepage:
-    path:     /{step}
+pichet_core_step:
+    path:     /step/{step}
     defaults: { _controller: PichetCoreBundle:User:form }
 
-pichet_core_admin_homepage:
+pichet_core_homepage:
     path:     /accueilAdmin
     defaults: { _controller: PichetCoreBundle:Admin:home }
 
+pichet_core_admin_ajax_add_participe:
+    path:     /participe/add
+    defaults: { _controller: PichetCoreBundle:Ajax:addClickParticiper }
 
 

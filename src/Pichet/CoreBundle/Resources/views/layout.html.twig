@@ -11,6 +11,10 @@
 
 {% block content %}
 {% endblock %}
-
+{% javascripts
+'@PichetCoreBundle/Resources/public/js/main.js'
+output='js/compiled/app.js' %}
+<script src="{{ asset_url }}"></script>
+{% endjavascripts %}
 </body>
 </html>

@@ -1,0 +1,30 @@
+{% extends 'PichetCoreBundle::layout.html.twig' %}
+{#{% extends '::base.html.twig' %}#}
+
+{% block content %}
+<div class="container">
+    <div class="raw">
+        <div class="col-xs-12 .col-md-4  btn btn-primary">
+            <div class="titre">Grande enquête interne sur la mobilité</div>
+        </div>
+    </div>
+    <p>
+        Bonjour,<br>
+        La direction générale du groupe a décidé de mener<br>
+        une grande enqête sur la mobilité afin de définir nos<br>
+        besoin de demain.<br>
+        Participez a notre enquête et obtenez deux place de cinéma<br>
+        pour votre participation.<br>
+
+        Cette enqête ne prends que 2 min, nous comptons sur vous.<br>
+
+        Le directeur général<br>
+        Remi EHRHART<br>
+    </p>
+    <a class="btn btn-primary add-participe" href="http://localhost:8000/step/1"
+            data-participe-url="{{ path('pichet_core_admin_ajax_add_participe') }}">
+        Participer
+    </a>
+
+</div>
+{% endblock %}
