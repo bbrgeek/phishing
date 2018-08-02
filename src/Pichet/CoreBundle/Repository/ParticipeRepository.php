@@ -10,4 +10,13 @@ namespace Pichet\CoreBundle\Repository;
  */
 class ParticipeRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getAllClickOnParticipe(){
+        $query = $this->createQueryBuilder('p')
+            ->select('COUNT(p)')
+        ;
+        return $query
+            ->getQuery()
+            ->getSingleScalarResult()
+            ;
+    }
 }

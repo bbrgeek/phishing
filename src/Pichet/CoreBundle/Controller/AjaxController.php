@@ -33,8 +33,8 @@ class AjaxController extends Controller
             $em->persist($participe);
             $em->flush();
         }
-
-        return new JsonResponse('ok');
+        return $this->redirectToRoute('pichet_core_step', array('step' => 1));
+//        return new JsonResponse('ok');
     }
 
 }

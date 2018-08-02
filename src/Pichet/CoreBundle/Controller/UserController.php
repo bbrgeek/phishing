@@ -16,17 +16,15 @@ class UserController extends Controller
     {
 
         if ($step == 1) {
-//            $form = $this->createForm(PersonnelleType::class);
-//            $form->handleRequest($request);
-
             $persons = new Personnelle();
             $form   = $this->get('form.factory')->create(PersonnelleType::class, $persons);
+
             if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($persons);
                 $em->flush();
 
-                return $this->redirectToRoute('pichet_core_homepage', array('step' => 2));
+                return $this->redirectToRoute('pichet_core_step', array('step' => 2));
             }
             return $this->render(
                 'PichetCoreBundle:User:step1.html.twig',
@@ -43,7 +41,7 @@ class UserController extends Controller
                 $em->persist($persons);
                 $em->flush();
 
-                return $this->redirectToRoute('pichet_core_homepage', array('step' => 3));
+                return $this->redirectToRoute('pichet_core_step', array('step' => 3));
             }
             return $this->render(
                 'PichetCoreBundle:User:step2.html.twig',

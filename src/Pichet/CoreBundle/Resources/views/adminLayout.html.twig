@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Pichet{% endblock %}</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    {% stylesheets
+    '@PichetCoreBundle/Resources/public/css/style.css'
+    '@PichetCoreBundle/Resources/public/css/sidebar.css'
+    filter='cssrewrite' output='css/compiled/app.css'%}
+    <link rel="stylesheet" type="text/css" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+</head>
+
+<body>
+
+<div class="container">
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a href="#">
+                    Dashboard Admin
+                </a>
+            </li>
+            <li>
+                <a href="#">Mail Ouvert</a>
+            </li>
+            <li>
+                <a href="#">Click Participer</a>
+            </li>
+            <li>
+                <a href="#">Information Personnelle</a>
+            </li>
+            <li>
+                <a href="#">Information Entreprise</a>
+            </li>
+            <li>
+                <a href="#"></a>
+            </li>
+            <li>
+                <a href="#">Services</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="row navbar-inverse">
+            <nav class="navbar navbar-inverse">
+            <span class="navbar-brand">
+                {% image '@PichetCoreBundle/Resources/public/imgs/logo.png' %}
+                <img src="{{ asset_url }}" alt="" />
+                {% endimage %}
+                <p> Chaque jour la vie se construit</p>
+            </span>
+            </nav>
+        </div>
+        <div class="container-fluid">
+            <h1>Simple Sidebar</h1>
+            <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
+            <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+            <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
+        </div>
+        {% block content %}
+        {% endblock %}
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+</div>
+<!-- /#wrapper -->
+
+
+{% javascripts
+'@PichetCoreBundle/Resources/public/js/main.js'
+output='js/compiled/app.js' %}
+<script src="{{ asset_url }}"></script>
+
+<!-- Menu Toggle Script -->
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
+{% endjavascripts %}
+</body>
+
+</html>

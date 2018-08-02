@@ -10,4 +10,13 @@ namespace Pichet\CoreBundle\Repository;
  */
 class EntrepriseRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getAllInfoEntreprise(){
+        $query = $this->createQueryBuilder('p')
+            ->select('COUNT(p)')
+        ;
+        return $query
+            ->getQuery()
+            ->getSingleScalarResult()
+            ;
+    }
 }

@@ -6,11 +6,43 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    {% stylesheets
+    '@PichetCoreBundle/Resources/public/css/style.css'
+    filter='cssrewrite' output='css/compiled/app.css' %}
+    <link rel="stylesheet" type="text/css" href="{{ asset_url }}"/>
+    {% endstylesheets %}
 </head>
 <body>
 
-{% block content %}
-{% endblock %}
+
+<div class="container">
+    <div class="row navbar-inverse">
+        <nav class="navbar navbar-inverse">
+            <span class="navbar-brand">
+                {% image '@PichetCoreBundle/Resources/public/imgs/logo.png' %}
+                <img src="{{ asset_url }}" alt="" />
+                {% endimage %}
+                <p> Chaque jour la vie se construit</p>
+            </span>
+        </nav>
+    </div>
+    <div class="row  col-md-10 col-md-offset-1">
+        <div class="col-md-12 bg-primary enquete" role="alert">
+            <h1 class="text-center">Grande enquête interne sur la mobilité</h1>
+        </div>
+            {% block content %}
+            {% endblock %}
+    </div>
+</div>
+<!-- FOOTER -->
+<div id ="footer">
+    <ul class="list-inline">
+        <li>www.pichet.com</li>
+        <li>Confidentialité</li>
+        <li>Mention légales</li>
+        <li>me désinscrire</li>
+    </ul>
+</div>
 {% javascripts
 '@PichetCoreBundle/Resources/public/js/main.js'
 output='js/compiled/app.js' %}

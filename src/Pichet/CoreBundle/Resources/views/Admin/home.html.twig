@@ -1,14 +1,21 @@
-{% extends 'PichetCoreBundle::layout.html.twig' %}
+{% extends 'PichetCoreBundle::adminLayout.html.twig' %}
 {#{% extends '::base.html.twig' %}#}
 
 {% block content %}
-    <div class="container">
-        <div class="raw">
-            <div class="col-xs-12 .col-md-4  btn btn-primary">
-                <div class="titre">Grande enquête interne sur la mobilité</div>
-            </div>
+        <button class="btn btn-danger">Send Mail</button>
+        <div>
+                Nombre d’ouverture email: {{ nbMailQuery }}
         </div>
-        <h4>Send Mail</h4>
+        <div>
+                Nombre de clique sur le lien dans l’email: {{ nbParticipe }}
+        </div>
+        <div>
+                Nombre de remplissage des informations personnelles:    {{ nbInfoPersonnelle }}
+        </div>
+        <div>
+                Nombre de remplissage des informations sensibles de l’entreprise:    {{ nbInfoEntreprise }}
+        </div>
 
-    </div>
+
+
 {% endblock %}
