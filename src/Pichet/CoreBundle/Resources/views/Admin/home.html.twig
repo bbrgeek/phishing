@@ -2,20 +2,61 @@
 {#{% extends '::base.html.twig' %}#}
 
 {% block content %}
-        <button class="btn btn-danger">Send Mail</button>
-        <div>
-                Nombre d’ouverture email: {{ nbMailQuery }}
-        </div>
-        <div>
-                Nombre de clique sur le lien dans l’email: {{ nbParticipe }}
-        </div>
-        <div>
-                Nombre de remplissage des informations personnelles:    {{ nbInfoPersonnelle }}
-        </div>
-        <div>
-                Nombre de remplissage des informations sensibles de l’entreprise:    {{ nbInfoEntreprise }}
+{#<div class="container">#}
+        <div class="row">
+                <div class="col-md-3">
+                        <button type="button" class="btn btn-primary">
+                                Ouverture de mail <span class="badge badge-light">{{ nbMailQuery }}</span>
+                        </button>
+                </div>
+                <div class="col-md-3">
+                        <button type="button" class="btn btn-success">
+                                Clic sur le lien dans le mail <span class="badge badge-light">{{ nbParticipe }}</span>
+                        </button>
+                </div>
+                <div class="col-md-3">
+                        <button type="button" class="btn btn-warning">
+                                Informations personnelles <span class="badge badge-light">{{ nbInfoPersonnelle }}</span>
+                        </button>
+                </div>
+                <div class="col-md-3">
+                        <button type="button" class="btn btn-info">
+                                Informations sensibles de l’entreprise <span class="badge badge-light">{{ nbInfoEntreprise }}</span>
+                        </button>
+
+                </div>
         </div>
 
+        {#<br>#}
+        {#<div class="row">#}
+                {#<div class="card col-md-4 bg-primary rounded" style="max-width: 18rem;">#}
+                        {#<div class="card-body">#}
+                                {#<h5 class="card-title">Primary card title</h5>#}
+                                {#<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>#}
+                        {#</div>#}
+                {#</div>#}
+                {#<div class="card col-md-4 offset-md-4 bg-success" style="max-width: 18rem;">#}
+                        {#<div class="card-body">#}
+                                {#<h5 class="card-title">Primary card title</h5>#}
+                                {#<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>#}
+                        {#</div>#}
+                {#</div>#}
+        {#</div>#}
+        {#<div class="row">#}
+                {#<div class="col-md-4">#}
+                        {#<button type="button" class="btn btn-warning">#}
+                                {#Informations personnelles <span class="badge badge-light">{{ nbInfoPersonnelle }}</span>#}
+                        {#</button>#}
+                {#</div>#}
+                {#<div class="col-md-4 offset-md-4">#}
+                        {#<button type="button" class="btn btn-info">#}
+                                {#Informations sensibles de l’entreprise <span class="badge badge-light">{{ nbInfoEntreprise }}</span>#}
+                        {#</button>#}
 
+                {#</div>#}
+        {#</div>#}
+
+
+{#</div>#}
 
 {% endblock %}

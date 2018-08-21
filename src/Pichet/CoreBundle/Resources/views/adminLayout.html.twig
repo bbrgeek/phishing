@@ -18,7 +18,7 @@
 <body>
 
 <div class="container">
-<div id="wrapper">
+<div id="wrapper" class="toggled">
 
     <!-- Sidebar -->
     <div id="sidebar-wrapper">
@@ -41,13 +41,10 @@
                 <a href="#">Information Entreprise</a>
             </li>
             <li>
-                <a href="#"></a>
+                <a href="#">Par Services</a>
             </li>
             <li>
-                <a href="#">Services</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
+                <a href="#">Total</a>
             </li>
         </ul>
     </div>
@@ -55,21 +52,18 @@
 
     <!-- Page Content -->
     <div id="page-content-wrapper">
-        <div class="row navbar-inverse">
-            <nav class="navbar navbar-inverse">
-            <span class="navbar-brand">
-                {% image '@PichetCoreBundle/Resources/public/imgs/logo.png' %}
-                <img src="{{ asset_url }}" alt="" />
-                {% endimage %}
-                <p> Chaque jour la vie se construit</p>
-            </span>
-            </nav>
-        </div>
+        {#<div class="row navbar-inverse">#}
+            {#<nav class="navbar navbar-inverse">#}
+            {#<span class="navbar-brand">#}
+                {#{% image '@PichetCoreBundle/Resources/public/imgs/logo.png' %}#}
+                {#<img src="{{ asset_url }}" alt="" />#}
+                {#{% endimage %}#}
+                {#<p> Chaque jour la vie se construit</p>#}
+            {#</span>#}
+            {#</nav>#}
+        {#</div>#}
         <div class="container-fluid">
-            <h1>Simple Sidebar</h1>
-            <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-            <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
-            <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle">Toggle Menu</a>
+            <h1>Statistique étude</h1>
         </div>
         {% block content %}
         {% endblock %}
