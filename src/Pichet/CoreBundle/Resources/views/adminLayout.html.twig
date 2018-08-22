@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Pichet{% endblock %}</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ asset('bundles/andreyboloninchartjs/js/Chart.min.js') }}"></script>
+    {% stylesheets
+    '@PichetCoreBundle/Resources/public/css/style.css'
+    '@PichetCoreBundle/Resources/public/css/sidebar.css'
+    filter='cssrewrite' output='css/compiled/app.css'%}
+    <link rel="stylesheet" type="text/css" href="{{ asset_url }}"/>
+    {% endstylesheets %}
+</head>
+
+<body>
+
+<div class="container">
+<div id="wrapper" class="toggled">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                {#<a href="{{ path('pichet_core_homepage' ) }}">#}
+                    {#Dashboard Admin#}
+                {#</a>#}
+            </li>
+            <li>
+                <a href="{{ path('pichet_core_mail_ouvert_graph' ) }}">Mail Ouvert</a>
+            </li>
+            <li>
+                <a href="{{ path('pichet_core_click_participer_graph' ) }}">Click Participer</a>
+            </li>
+            <li>
+                <a href="{{ path('pichet_core_info_personnelle_graph' ) }}">Information Personnelle</a>
+            </li>
+            <li>
+                <a href="{{ path('pichet_core_info_entreprise_graph' ) }}">Information Entreprise</a>
+            </li>
+            <li>
+                <a href="{{ path('pichet_core_by_services' ) }}">Par Services</a>
+            </li>
+
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        {#<div class="row navbar-inverse">#}
+            {#<nav class="navbar navbar-inverse">#}
+            {#<span class="navbar-brand">#}
+                {#{% image '@PichetCoreBundle/Resources/public/imgs/logo.png' %}#}
+                {#<img src="{{ asset_url }}" alt="" />#}
+                {#{% endimage %}#}
+                {#<p> Chaque jour la vie se construit</p>#}
+            {#</span>#}
+            {#</nav>#}
+        {#</div>#}
+        <div class="container-fluid">
+            <h1>Statistique étude</h1>
+        </div>
+        {% block content %}
+        {% endblock %}
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+</div>
+<!-- /#wrapper -->
+
+
+{% javascripts
+'@PichetCoreBundle/Resources/public/js/main.js'
+output='js/compiled/app.js' %}
+<script src="{{ asset_url }}"></script>
+
+<!-- Menu Toggle Script -->
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
+{% endjavascripts %}
+</body>
+
+</html>

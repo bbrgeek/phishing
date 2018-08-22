@@ -1,0 +1,34 @@
+{% extends 'PichetCoreBundle::mailLayout.html.twig' %}
+
+{% block content %}
+    <p>
+        Bonjour,<br>
+        La direction générale du groupe a décidé de mener<br>
+        une grande enqête sur la mobilité afin de définir nos besoin<br>
+        de demain.<br>
+        <strong>Participez a notre enquête et obtenez deux place de cinéma<br>
+        pour votre participation.<br></strong>
+
+        Cette enqête ne prends que 2 min, nous comptons sur vous.<br>
+
+        Le directeur général<br>
+        Remi EHRHART<br>
+    </p>
+    {% image '@PichetCoreBundle/Resources/public/imgs/Remi.jpeg' %}
+    <img src="{{ asset_url }}" alt="" />
+    {% endimage %}
+    <br>
+    <a class="btn btn-lg btn-primary add-participe " style="float: left" href="{{ url('pichet_core_admin_ajax_add_participe') }}">
+        Participer
+    </a>
+
+    {#<div style="padding-top: 350px; text-align: center">#}
+    <div style="padding-top: 350px; text-align: center">
+        <ul class="list-inline">
+            <li>www.pichet.com</li>
+            <li>Confidentialité</li>
+            <li>Mention légales</li>
+            <li>me désinscrire</li>
+        </ul>
+    </div>
+{% endblock %}

@@ -2,10 +2,14 @@
 {#{% extends '::base.html.twig' %}#}
 
 {% block content %}
-<div class="container">
-    <div class="col-md-12 step">
-        <div class="titre">Grande enquête interne sur la mobilité</div>
+    {% image '@PichetCoreBundle/Resources/public/imgs/gaumontcine.png' %}
+    <img src="{{ asset_url }}" alt="" />
+    {% endimage %}
+    {% image '@PichetCoreBundle/Resources/public/imgs/gaumontcine.png' %}
+    <img src="{{ asset_url }}" alt="" />
+    {% endimage %}
+    <div class="end">
+        <button class="btn btn-lg col-md-12 btn-primary">Cliquez sur le bouton pour télécharger vos places</button>
     </div>
-    <button class="btn btn-primary">Cliquez sur le bouton pour télécharger vos places</button>
-</div>
+
 {% endblock %}

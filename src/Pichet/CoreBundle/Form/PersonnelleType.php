@@ -4,6 +4,7 @@ namespace Pichet\CoreBundle\Form;
 
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
@@ -42,13 +43,29 @@ class PersonnelleType extends AbstractType
                     'required' => true
                 )
             )
+//            ->add(
+//                'date',
+//                DateType::class,
+//                array(
+////                    'label' => 'Date de naissance',
+//                    'required' => true,
+//                    'years' => range(date('Y')-70, date('Y')-10)
+//                )
+//            )
             ->add(
                 'date',
-                DateType::class,
+                BirthdayType::class,
                 array(
 //                    'label' => 'Date de naissance',
                     'required' => true,
-                    'years' => range(date('Y')-70, date('Y')-10)
+                    'years' => range(date('Y')-70, date('Y')-10),
+                    'widget' => 'single_text',
+
+                    'placeholder' => array(
+                        'year'=> 'AAAA',
+                        'month'=> 'MM',
+                        'day'=> 'JJ'
+                    )
                 )
             )
 
@@ -78,7 +95,7 @@ class PersonnelleType extends AbstractType
                 SubmitType::class,
                 array(
                     'label' => 'Page suivante',
-                    'attr' => array('class' => 'col-sm-12 control-label btn large btn-primary')
+                    'attr' => array('class' => 'btn btn-lg btn-primary')
                 )
             );
         ;

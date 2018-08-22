@@ -1,0 +1,40 @@
+
+.navbar p {
+    color: deepskyblue;
+
+}
+.navbar-inverse{
+    margin-bottom: 50px;
+}
+h1{
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+h3{
+    padding-bottom: 20px;
+}
+.enquete{
+    margin-bottom: 50px;
+}
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    text-align: center;
+}
+.end{
+    margin-top:100px;
+}
+
+.mail{
+    padding-bottom: 100px;
+}
+.mail p{
+    font-size:20px;
+}
+.mail img{
+    display: block;
+    float: right;
+}

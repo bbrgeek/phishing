@@ -10,4 +10,13 @@ namespace Pichet\CoreBundle\Repository;
  */
 class PersonnelleRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getAllInfoPersonnelle(){
+        $query = $this->createQueryBuilder('p')
+            ->select('COUNT(p)')
+        ;
+        return $query
+            ->getQuery()
+            ->getSingleScalarResult()
+            ;
+    }
 }

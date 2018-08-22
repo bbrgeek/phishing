@@ -2,3 +2,6 @@ services:
 #    pichet_core.example:
 #        class: Pichet\CoreBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
+    pichet_core.mail.service:
+        class: Pichet\CoreBundle\Service\MailService
+        arguments: [ '@service_container', '%kernel.root_dir%', '@mailer', '@doctrine.orm.entity_manager', '@form.factory' ]
