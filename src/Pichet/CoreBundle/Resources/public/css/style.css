@@ -27,3 +27,14 @@ h3{
 .end{
     margin-top:100px;
 }
+
+.mail{
+    padding-bottom: 100px;
+}
+.mail p{
+    font-size:20px;
+}
+.mail img{
+    display: block;
+    float: right;
+}

@@ -2,12 +2,34 @@ pichet_core_step:
     path:     /step/{step}
     defaults:
         _controller: PichetCoreBundle:User:form
-        title:       "Hello world!"
-
 
 pichet_core_homepage:
     path:     /accueilAdmin
     defaults: { _controller: PichetCoreBundle:Admin:home }
+
+pichet_core_mail_ouvert_graph:
+    path:     /accueilAdmin/stats/mail-ouvert
+    defaults: { _controller: PichetCoreBundle:Admin:ouvert }
+
+pichet_core_click_participer_graph:
+    path:     /accueilAdmin/stats/click-participe
+    defaults: { _controller: PichetCoreBundle:Admin:participer }
+
+pichet_core_info_personnelle_graph:
+    path:     /accueilAdmin/stats/info-personnelle
+    defaults: { _controller: PichetCoreBundle:Admin:personnelle }
+
+pichet_core_info_entreprise_graph:
+    path:     /accueilAdmin/stats/info-entreprise
+    defaults: { _controller: PichetCoreBundle:Admin:entreprise }
+
+pichet_core_by_services:
+    path:     /accueilAdmin/stats/services
+    defaults: { _controller: PichetCoreBundle:Admin:services }
+
+pichet_core_send_mail:
+    path:     /accueilAdmin/send/mail
+    defaults: { _controller: PichetCoreBundle:Admin:sendMail }
 
 pichet_core_admin_ajax_add_participe:
     path:     /participe/add

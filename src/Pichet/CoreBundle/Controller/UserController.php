@@ -34,11 +34,11 @@ class UserController extends Controller
                 ));
         }
         elseif ($step == 2) {
-            $persons = new Entreprise();
-            $form   = $this->get('form.factory')->create(EntrepriseType::class, $persons);
+            $entreprise = new Entreprise();
+            $form   = $this->get('form.factory')->create(EntrepriseType::class, $entreprise);
             if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
                 $em = $this->getDoctrine()->getManager();
-                $em->persist($persons);
+                $em->persist($entreprise);
                 $em->flush();
 
                 return $this->redirectToRoute('pichet_core_step', array('step' => 3));
@@ -54,6 +54,14 @@ class UserController extends Controller
 
             return $this->render(
                 'PichetCoreBundle:User:step3.html.twig',
+                array(
+
+                )
+            );
+        }elseif ($step == 4) {
+
+            return $this->render(
+                'PichetCoreBundle:Email:mail.html.twig',
                 array(
 
                 )

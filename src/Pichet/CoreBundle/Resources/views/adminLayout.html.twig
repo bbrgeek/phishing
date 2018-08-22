@@ -7,6 +7,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ asset('bundles/andreyboloninchartjs/js/Chart.min.js') }}"></script>
     {% stylesheets
     '@PichetCoreBundle/Resources/public/css/style.css'
     '@PichetCoreBundle/Resources/public/css/sidebar.css'
@@ -24,28 +25,26 @@
     <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li class="sidebar-brand">
-                <a href="#">
-                    Dashboard Admin
-                </a>
+                {#<a href="{{ path('pichet_core_homepage' ) }}">#}
+                    {#Dashboard Admin#}
+                {#</a>#}
             </li>
             <li>
-                <a href="#">Mail Ouvert</a>
+                <a href="{{ path('pichet_core_mail_ouvert_graph' ) }}">Mail Ouvert</a>
             </li>
             <li>
-                <a href="#">Click Participer</a>
+                <a href="{{ path('pichet_core_click_participer_graph' ) }}">Click Participer</a>
             </li>
             <li>
-                <a href="#">Information Personnelle</a>
+                <a href="{{ path('pichet_core_info_personnelle_graph' ) }}">Information Personnelle</a>
             </li>
             <li>
-                <a href="#">Information Entreprise</a>
+                <a href="{{ path('pichet_core_info_entreprise_graph' ) }}">Information Entreprise</a>
             </li>
             <li>
-                <a href="#">Par Services</a>
+                <a href="{{ path('pichet_core_by_services' ) }}">Par Services</a>
             </li>
-            <li>
-                <a href="#">Total</a>
-            </li>
+
         </ul>
     </div>
     <!-- /#sidebar-wrapper -->

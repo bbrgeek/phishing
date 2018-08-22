@@ -1,0 +1,21 @@
+{% extends 'PichetCoreBundle::panelLayout.html.twig' %}
+{#{% extends '::base.html.twig' %}#}
+
+{% block content %}
+        <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+        {% for e in Entreprise %}
+                        <div>
+                                <div class="col-xs-6 col-md-3">
+                                        <div class="panel panel-default">
+                                                <div class="panel-body easypiechart-panel">
+                                                        <h4>{{ e.service }}</h4>
+                                                        <div class="easypiechart easypiechart-black" data-percent="{{ (e.1 * 100 / nbInfoEntreprise)|round }}" ><span class="percent">{{ (e.1 * 100 / nbInfoEntreprise)|round }}%</span>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+        {% endfor %}
+        </div><!--/.row-->
+
+{% endblock %}

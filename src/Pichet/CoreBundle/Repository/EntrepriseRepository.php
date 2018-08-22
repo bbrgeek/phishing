@@ -19,4 +19,15 @@ class EntrepriseRepository extends \Doctrine\ORM\EntityRepository
             ->getSingleScalarResult()
             ;
     }
+
+    public function getAllEntreprise(){
+        $query = $this->createQueryBuilder('p')
+        ->select('COUNT(p), p.service')
+        ->groupBy('p.service')
+        ;
+        return $query
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 }

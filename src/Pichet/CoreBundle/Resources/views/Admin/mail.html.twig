@@ -1,0 +1,19 @@
+{% extends 'PichetCoreBundle::panelLayout.html.twig' %}
+
+{% block content %}
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main" style="padding-top: 200px;">
+        <div class="row">
+                {{ form_start(form) }}
+                <div class="col-sm-12">
+                        {{ form_label(form.mail,"Adresse Mail", {'label_attr': {'class': 'col-sm-6 col-sm-offset-6 '}}) }}
+
+                        {{ form_widget(form.mail, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="col-sm-12">
+                        {{ form_widget(form.save) }}
+                </div>
+                {#{{ form_widget(form) }}#}
+                {{ form_end(form) }}
+        </div>
+</div>
+{% endblock %}
