@@ -227,14 +227,7 @@ class AdminController extends Controller
             $data = $form->getData();
             $mailService->sendMailTest($data['mail']);
 
-            return $this->render('PichetCoreBundle:Admin:home.html.twig',  array(
-                'nbMailQuery' => $nbMailQuery,
-                'nbParticipe' => $nbParticipe,
-                'nbInfoEntreprise' => $nbInfoEntreprise,
-                'Entreprise' => $Entreprise,
-                'nbInfoPersonnelle' => $nbInfoPersonnelle,
-                'total' => $total
-            ));
+            return $this->redirectToRoute('pichet_core_homepage');
         }
 
 

@@ -21,6 +21,11 @@ class Open
      */
     private $id;
 
+    /**
+     * @var string $token
+     * @ORM\Column(name="token", type="string", length=255, unique=true)
+     */
+    protected $token;
 
     /**
      * Get id
@@ -31,5 +36,22 @@ class Open
     {
         return $this->id;
     }
+
+    /**
+     * @return string
+     */
+    public function getToken()
+    {
+        return $this->token;
+    }
+
+    /**
+     * @param string $token
+     */
+    public function setToken($token)
+    {
+        $this->token = $token;
+    }
+
 }
 

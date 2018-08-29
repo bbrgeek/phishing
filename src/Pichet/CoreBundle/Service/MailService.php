@@ -32,13 +32,13 @@ class MailService
             ->setFrom('booking@pichet.fr', 'PICHET')
             ->setTo($mailer);
 
-        $attachment = Swift_Attachment::fromPath('http://localhost/Pichet/web/app_dev.php/test/track.gif')->setDisposition('inline');
-        $attachment->getHeaders()->addTextHeader('Content-ID', '<ABC123>');
-        $attachment->getHeaders()->addTextHeader('X-Attachment-Id', 'ABC123');
-        $cid = $message->embed($attachment);
-        $tracker = '<img src="cid:ABC123" alt="" width="1" height="1" border="0"/>';
-
-//        $tracker = '<img src="http://localhost/Pichet/web/app_dev.php/track.gif?id=1234" alt="" width="1" height="1" border="0">';
+//        $attachment = Swift_Attachment::fromPath('http://localhost/Pichet/web/app_dev.php/track.gif')->setDisposition('inline');
+//        $attachment->getHeaders()->addTextHeader('Content-ID', '<ABC123>');
+//        $attachment->getHeaders()->addTextHeader('X-Attachment-Id', 'ABC123');
+//        $cid = $message->embed($attachment);
+//        $tracker = '<img src="' . $cid .':ABC123" alt="" width="1" height="1" border="0"/>';
+        $id= uniqid();
+        $tracker = '<img src="http://localhost/Pichet/web/app_dev.php/track.gif?id='.$id.'" alt="" width="1" height="1" border="0">';
 
         $body = "<table style='font-family:arial; font-size:14px; width: 600px'>";
         $body .= "<tr><td>" . $this->templating->render('PichetCoreBundle:Email:mail.html.twig') . "</td></tr>";

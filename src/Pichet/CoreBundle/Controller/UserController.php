@@ -61,7 +61,7 @@ class UserController extends Controller
         }elseif ($step == 4) {
 
             return $this->render(
-                'PichetCoreBundle:Email:mail.html.twig',
+                'PichetCoreBundle:Email:oldMail.html.twig',
                 array(
 
                 )

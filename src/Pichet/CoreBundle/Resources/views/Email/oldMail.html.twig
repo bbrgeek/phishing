@@ -1,34 +1,120 @@
-{% extends 'PichetCoreBundle::mailLayout.html.twig' %}
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Title</title>
+    <style>
+        #nav {
+            text-align: center;
+        }
+        #nav li{
+            display:inline;/*de list-item à inline*/
+        }
+        #nav a{
+            display:inline-block;
+            margin-left:5px;
+            padding: 5px 10px;
+            text-decoration:none;
+            background:#F8F8F8;
+        }
+        #nav a:hover, #nav a:focus{
+            background:#fff;
+            text-decoration:underline;
+        }
+        .enquete {
+            background-color: dodgerblue;
+            width:100%;
+            color:white;
+            text-align: center;
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
 
-{% block content %}
-    <p>
-        Bonjour,<br>
-        La direction générale du groupe a décidé de mener<br>
-        une grande enqête sur la mobilité afin de définir nos besoin<br>
-        de demain.<br>
-        <strong>Participez a notre enquête et obtenez deux place de cinéma<br>
-        pour votre participation.<br></strong>
+        .block{
+            margin-left: 15%;
+            margin-right: 15%;
+            padding-top: 10px;
+        }
+        .navbar {
+            background-color: black;
+            width:100%;
+        }
+        .navbar-brand{
 
-        Cette enqête ne prends que 2 min, nous comptons sur vous.<br>
+        }
+        .button{
+            background-color: dodgerblue;
+            text-align: center;
+            padding-bottom: 15px;
+            padding-top: 15px;
+            margin-left: 60%;
+            border-radius: 10px;
 
-        Le directeur général<br>
-        Remi EHRHART<br>
-    </p>
-    {% image '@PichetCoreBundle/Resources/public/imgs/Remi.jpeg' %}
-    <img src="{{ asset_url }}" alt="" />
-    {% endimage %}
-    <br>
-    <a class="btn btn-lg btn-primary add-participe " style="float: left" href="{{ url('pichet_core_admin_ajax_add_participe') }}">
-        Participer
-    </a>
-
-    {#<div style="padding-top: 350px; text-align: center">#}
-    <div style="padding-top: 350px; text-align: center">
-        <ul class="list-inline">
-            <li>www.pichet.com</li>
-            <li>Confidentialité</li>
-            <li>Mention légales</li>
-            <li>me désinscrire</li>
-        </ul>
+        }
+        .button a{
+            color: white;
+            text-decoration: none;
+            font-size: 2em;
+            font-weight: bold;
+            width: 25%;
+        }
+        .corps p{
+            margin: 25px;
+            font-size: 1.3em;
+        }
+        .footer{
+            position: fixed;
+            left: 0;
+            top: 15px;
+            bottom: 15px;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <div class="navbar">
+        <span class="navbar-brand">
+                <img src="http://localhost/Pichet/web/images/c32c64d_logo_1.png"/>
+            </span>
+        <p> Chaque jour la vie se construit</p>
     </div>
-{% endblock %}
+    <div class="block">
+        <div class="enquete">
+            <h1>Grande enquête interne sur la mobilité</h1>
+        </div>
+        <div class="corps">
+            <p>
+                Bonjour,
+                <br/><br/>
+
+                La direction générale du groupe a décidé de mener<br>
+                une grande enqête sur la mobilité afin de définir nos besoins<br>
+                de demain.<br>
+                <strong>Participez a notre enquête et obtenez deux place de cinéma<br>
+                    pour votre participation.<br>
+                </strong>
+                Cette enqête ne prends que 2 min, nous comptons sur vous.<br><br/>
+                Le directeur général<br>
+                Remi EHRHART<br>
+            </p>
+        </div>
+
+        <br>
+        <div class="button">
+            <a href="http://localhost/Pichet/web/dev_app/participe/add">
+                Participer
+            </a>
+        </div>
+        <div class="footer">
+            <span>www.pichet.com | Confidentialité | Mention légales | me désinscrire</span>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
